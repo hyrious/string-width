@@ -1,8 +1,8 @@
 export interface Options {
   /**
    * Count [ambiguous width characters](https://www.unicode.org/reports/tr11/#Ambiguous) as having narrow width (count of 1) instead of wide width (count of 2).
-	 * @default true
-	 */
+   * @default true
+   */
   readonly ambiguousIsNarrow?: boolean;
 }
 
