@@ -1,0 +1,23 @@
+{
+  "name": "@hyrious/string-width",
+  "version": "0.1.0",
+  "description": "Displayed width of strings according to UAX#11 rules",
+  "keywords": ["text", "width", "unicode"],
+  "license": "MIT",
+  "author": "hyrious <hyrious@outlook.com>",
+  "type": "module",
+  "main": "./index.cjs",
+  "module": "./index.js",
+  "unpkg": "./index.iife.js",
+  "jsdelivr": "./index.iife.js",
+  "types": "./index.d.ts",
+  "files": [
+    "index.js",
+    "index.cjs",
+    "index.iife.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "make": "node make.js"
+  }
+}

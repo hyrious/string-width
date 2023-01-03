@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+</head>
+<body>
+  <label>stringWidth(<input id="i" value="喵喵" oninput="update()">, {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;ambiguousIsNarrow:
+    <input id="opt_narrow" type="checkbox" checked oninput="_narrow.innerText=this.checked;update()">
+    <label id="_narrow" for="opt_narrow">undefined</label><br>
+  })=</label><output id="o">4</output>
+  <script src="index.iife.js"></script>
+  <script>
+    opt_narrow.indeterminate = true
+    function update() {
+      o.innerText = stringWidth(i.value, {
+        ambiguousIsNarrow: opt_narrow.checked
+      })
+    }
+  </script>
+</body>
+</html>
