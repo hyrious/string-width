@@ -10,8 +10,9 @@ async function fetch(filename) {
   const cached = path.join(os.tmpdir(), path.basename(filename))
   if (!fs.existsSync(cached))
     await new Promise(resolve => https.get(
-      // `https://raw.githubusercontent.com/unicode-rs/unicode-width/master/${filename}`,
-      `https://cdn.jsdelivr.net/gh/unicode-rs/unicode-width@master/${filename}`,
+      process.env.CI ?
+        `https://raw.githubusercontent.com/unicode-rs/unicode-width/master/${filename}` :
+        `https://cdn.jsdelivr.net/gh/unicode-rs/unicode-width@master/${filename}`,
       res => res.pipe(fs.createWriteStream(cached)).on('finish', resolve)))
   return fs.readFileSync(cached, 'utf8')
 }
